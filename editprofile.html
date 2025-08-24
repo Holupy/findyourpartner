@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dating</title>
+    <link rel="shortcut icon" href="img/LOGO.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.css">
+    <link rel="stylesheet" href="css/boxicons.min.css">
+      <!-- Inter Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    
+    <!-- Custom CSS for profile edit styling -->
+    <style>
+        :root {
+            --brand-red: #a52a2a;
+            --brand-brown-dark: #34211ed0;
+            --brand-light-gray: #f3f4f6;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--brand-light-gray);
+        }
+        .btn-brand-red {
+            background-color: var(--brand-red);
+            color: white;
+            border: none;
+        }
+        .btn-brand-red:hover {
+            background-color: var(--brand-brown-dark);
+        }
+        .text-brand-red { color: var(--brand-red); }
+        .text-brand-brown-dark { color: var(--brand-brown-dark); }
+        .card-profile {
+            background-color: #fff;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        .profile-img-container {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-top: -75px;
+        }
+        .bg-profile-header {
+            background-image: url('https://placehold.co/800x250/D0D0D0/333333?text=Profile+Banner');
+            background-size: cover;
+            background-position: center;
+            height: 150px;
+            border-top-left-radius: 1.5rem;
+            border-top-right-radius: 1.5rem;
+        }
+        .nav-tabs .nav-link {
+            color: #6c757d;
+            border-bottom: 2px solid transparent;
+        }
+        .nav-tabs .nav-link.active {
+            color: var(--brand-red);
+            border-color: var(--brand-red);
+            font-weight: 500;
+        }
+        .form-control-rounded {
+            border-radius: 1rem;
+        }
+        .btn-check:checked + .btn {
+            background-color: var(--brand-brown-dark);
+            color: white;
+            border-color: var(--brand-brown-dark);
+        }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100 p-4">
+
+    <!-- Main Container -->
+    <div class="bg-white rounded-5 shadow-lg p-4 p-md-5 w-100 mx-auto d-flex flex-column flex-grow-1" style="max-width: 950px;">
+        
+        <!-- Header Section -->
+        <header class="d-flex justify-content-between align-items-center mb-4">
+            <a href="lovoon.html" class="text-dark"><i class="fas fa-arrow-left fs-4"></i> BACK</a>
+            <div class="d-flex align-items-center">
+                <div class="dropdown">
+                    <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Kulvir Kang
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="login.html">Logout</a></li>
+                    </ul>
+                </div>
+                <img src="https://placehold.co/40x40/D0D0D0/333333?text=KK" class="rounded-circle ms-2" alt="Profile">
+            </div>
+        </header>
+
+        <div class="row g-4 flex-grow-1">
+            <!-- Profile Info Column (Mobile: top, Desktop: left) -->
+            <div class="col-md-5 d-flex flex-column" data-aos="fade-right">
+                <div class="card card-profile border-0 shadow-sm text-center">
+                    <div class="bg-profile-header"></div>
+                    <div class="d-flex justify-content-center">
+                        <img src="https://placehold.co/150x150/D0D0D0/333333?text=KK" alt="Kulvir Kang" class="img-fluid rounded-circle profile-img-container">
+                    </div>
+                    <div class="card-body pt-0">
+                        <h4 class="fw-bold mb-1">Kulvir Kang</h4>
+                        <p class="text-muted mb-3"><small>Project Management • UK</small></p>
+                        
+                        <!-- Mobile edit profile button -->
+                        <div class="d-grid gap-2 d-md-none">
+                            <button class="btn btn-outline-secondary rounded-pill fw-medium">
+                                <i class="fas fa-edit me-2"></i>EDIT PROFILE
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Edit Form Column (Mobile: bottom, Desktop: right) -->
+            <div class="col-md-7 d-flex flex-column" data-aos="fade-left">
+                <ul class="nav nav-tabs justify-content-center border-0 mb-3" id="profileTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active rounded-pill me-2 fw-medium" id="basic-info-tab" data-bs-toggle="tab" data-bs-target="#basic-info" type="button" role="tab" aria-controls="basic-info" aria-selected="true">Basic Info</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link rounded-pill me-2 fw-medium" id="about-me-tab" data-bs-toggle="tab" data-bs-target="#about-me" type="button" role="tab" aria-controls="about-me" aria-selected="false">About me</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link rounded-pill me-2 fw-medium" id="my-bio-tab" data-bs-toggle="tab" data-bs-target="#my-bio" type="button" role="tab" aria-controls="my-bio" aria-selected="false">My BIO</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link rounded-pill fw-medium" id="written-prompts-tab" data-bs-toggle="tab" data-bs-target="#written-prompts" type="button" role="tab" aria-controls="written-prompts" aria-selected="false">Written prompts</button>
+                    </li>
+                </ul>
+
+                <div class="tab-content flex-grow-1" id="profileTabContent">
+                    <div class="tab-pane fade show active" id="basic-info" role="tabpanel" aria-labelledby="basic-info-tab">
+                        <h4 class="fw-bold mb-4">Information</h4>
+                        <form>
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <label for="firstName" class="form-label text-muted">First Name*</label>
+                                    <input type="text" class="form-control form-control-rounded" id="firstName" value="Kulvir">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="lastName" class="form-label text-muted">Last Name*</label>
+                                    <input type="text" class="form-control form-control-rounded" id="lastName" value="Kang">
+                                </div>
+                            </div>
+                            <div class="row g-3 mb-3">
+                                <div class="col-12">
+                                    <label for="location" class="form-label text-muted">Location*</label>
+                                    <input type="text" class="form-control form-control-rounded" id="location" value="London">
+                                </div>
+                            </div>
+                            <div class="row g-3 mb-3">
+                                <div class="col-4">
+                                    <label for="day" class="form-label text-muted">Day*</label>
+                                    <input type="text" class="form-control form-control-rounded" id="day" value="01">
+                                </div>
+                                <div class="col-4">
+                                    <label for="month" class="form-label text-muted">Month*</label>
+                                    <input type="text" class="form-control form-control-rounded" id="month" value="Jun">
+                                </div>
+                                <div class="col-4">
+                                    <label for="year" class="form-label text-muted">Year*</label>
+                                    <input type="text" class="form-control form-control-rounded" id="year" value="1989">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label text-muted">Gender*</label>
+                                <div class="btn-group w-100" role="group">
+                                    <input type="radio" class="btn-check" name="gender" id="male" autocomplete="off" checked>
+                                    <label class="btn btn-outline-secondary rounded-start-pill" for="male">Male</label>
+                                    <input type="radio" class="btn-check" name="gender" id="female" autocomplete="off">
+                                    <label class="btn btn-outline-secondary rounded-end-pill" for="female">Female</label>
+                                </div>
+                            </div>
+                            <!-- Photos section -->
+                            <div class="mt-5">
+                                <h4 class="fw-bold mb-3">Photos</h4>
+                                <p class="text-muted small">Upload 1 photo with your winning smile, 1 full length image and 1 picture with your best outfit!</p>
+                                <div class="row g-3">
+                                    <div class="col-4">
+                                        <div class="d-flex flex-column align-items-center justify-content-center border-2 border-dashed border-secondary rounded-4 p-4 cursor-pointer h-100">
+                                            <i class="fas fa-cloud-upload-alt fs-2 text-muted mb-2"></i>
+                                            <p class="text-sm text-center text-muted mb-0">Drag & drop your files here or <span class="text-dark fw-medium">browse</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <img src="https://placehold.co/300x400/D0D0D0/333333?text=Photo+1" class="img-fluid rounded-4 shadow-sm" alt="Photo 1">
+                                    </div>
+                                    <div class="col-4">
+                                        <img src="https://placehold.co/300x400/D0D0D0/333333?text=Photo+2" class="img-fluid rounded-4 shadow-sm" alt="Photo 2">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Other tabs content can be added here -->
+                    <div class="tab-pane fade" id="about-me" role="tabpanel" aria-labelledby="about-me-tab">...</div>
+                    <div class="tab-pane fade" id="my-bio" role="tabpanel" aria-labelledby="my-bio-tab">...</div>
+                    <div class="tab-pane fade" id="written-prompts" role="tabpanel" aria-labelledby="written-prompts-tab">...</div>
+                </div>
+
+                <!-- Action buttons (Desktop) -->
+                <div class="d-none d-md-flex justify-content-end gap-3 mt-4">
+                    <button class="btn btn-secondary rounded-pill px-4">CLOSE</button>
+                    <button class="btn btn-brand-red rounded-pill px-4">SAVE CHANGES</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action buttons (Mobile) -->
+        <div class="d-grid gap-2 d-md-none mt-4">
+            <button class="btn btn-brand-red rounded-pill px-4">SAVE CHANGES</button>
+            <button class="btn btn-secondary rounded-pill px-4">CLOSE</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/all.min.js"></script>
+    
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50,
+        });
+    </script>
+</body>
+</html>

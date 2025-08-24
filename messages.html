@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dating</title>
+    <link rel="shortcut icon" href="img/LOGO.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.css">
+    <link rel="stylesheet" href="css/boxicons.min.css">
+     <!-- Inter Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+   
+    <style>
+        :root {
+            --brand-red: #a52a2a;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .main-container {
+            width: 100%;
+            height: 100vh;
+        }
+        @media (min-width: 768px) {
+            .main-container {
+                height: 100vh;
+                border-radius: 1rem; 
+            }
+        }
+        .message-list-container, .chat-messages-container, .profile-media-container {
+            overflow-y: auto;
+        }
+        .message-list-container::-webkit-scrollbar,
+        .chat-messages-container::-webkit-scrollbar,
+        .profile-media-container::-webkit-scrollbar {
+            width: 6px;
+        }
+        .message-list-container::-webkit-scrollbar-thumb,
+        .chat-messages-container::-webkit-scrollbar-thumb,
+        .profile-media-container::-webkit-scrollbar-thumb {
+            background-color: #d1d5db;
+            border-radius: 4px;
+        }
+        .profile-media-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+        }
+        .audio-wave {
+            height: 2rem;
+            width: 100%;
+            background: url("https://placehold.co/200x50/e5e7eb/6b7280?text=Audio+Wave") no-repeat center;
+            background-size: contain;
+            filter: invert(1);
+        }
+        .bg-brand-red { background-color: var(--brand-red); }
+        .text-brand-red { color: var(--brand-red); }
+        .conversation-item:hover {
+            background-color: #f3f4f6;
+        }
+    </style>
+</head>
+<body class="p-0 p-sm-1 p-md-3 d-flex justify-content-center align-items-center min-vh-100">
+
+    <!-- Main Messages Container -->
+    <div class="bg-white main-container shadow-lg d-flex flex-column flex-md-row">
+
+        <!-- Conversation List Section (Left Column) -->
+        <div id="message-list" class="col-12 col-md-4 border-end border-gray-200 d-flex flex-column h-100 overflow-hidden">
+            <!-- Header -->
+            <div class="p-4 border-bottom border-gray-200">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h2 class="fs-4 fw-bold">Messages</h2>
+                    <i class="fas fa-ellipsis-h text-secondary cursor-pointer"></i>
+                </div>
+                <div class="position-relative mt-4">
+                    <input type="text" placeholder="Search" class="form-control rounded-pill ps-5 py-2">
+                    <i class="fas fa-search position-absolute start-0 ms-3 top-50 translate-middle-y text-secondary"></i>
+                </div>
+            </div>
+
+            <!-- Message Filter -->
+            <div class="p-4 border-bottom border-gray-200">
+                <span class="small fw-medium text-dark">All Messages (9)</span>
+            </div>
+
+            <!-- List of Conversations -->
+            <div class="flex-grow-1 message-list-container">
+                <!-- Conversation Item -->
+                <div class="conversation-item p-4 border-bottom border-gray-200 cursor-pointer d-flex align-items-center" data-user-id="manpreet">
+                    <div class="position-relative">
+                        <img src="https://placehold.co/48x48/f87171/ffffff?text=M" alt="Manpreet" class="rounded-circle" style="width: 48px; height: 48px;">
+                        <span class="position-absolute bottom-0 end-0 bg-success rounded-circle border border-2 border-white" style="width: 12px; height: 12px;"></span>
+                    </div>
+                    <div class="ms-3 flex-grow-1 overflow-hidden">
+                        <p class="fw-medium text-truncate mb-0">Manpreet Acharya</p>
+                        <p class="small text-secondary text-truncate mb-0">I'll catch up with you soon!</p>
+                    </div>
+                    <div class="small text-secondary text-nowrap">12:15 PM</div>
+                </div>
+                <!-- Other conversation items -->
+                <div class="conversation-item p-4 border-bottom border-gray-200 cursor-pointer d-flex align-items-center" data-user-id="ravneet">
+                    <div class="position-relative">
+                        <img src="https://placehold.co/48x48/fbbf24/ffffff?text=R" alt="Ravneet" class="rounded-circle" style="width: 48px; height: 48px;">
+                        <span class="position-absolute top-0 end-0 bg-danger text-white small rounded-circle d-flex justify-content-center align-items-center" style="width: 20px; height: 20px;">2</span>
+                    </div>
+                    <div class="ms-3 flex-grow-1 overflow-hidden">
+                        <p class="fw-medium text-truncate mb-0">Ravneet Khatri</p>
+                        <p class="small text-secondary text-truncate mb-0">2 mins ago</p>
+                    </div>
+                    <div class="small text-secondary text-nowrap">12:15 PM</div>
+                </div>
+                <div class="conversation-item p-4 border-bottom border-gray-200 cursor-pointer d-flex align-items-center" data-user-id="jospreet">
+                    <div class="position-relative">
+                        <img src="https://placehold.co/48x48/60a5fa/ffffff?text=J" alt="Jospreet" class="rounded-circle" style="width: 48px; height: 48px;">
+                    </div>
+                    <div class="ms-3 flex-grow-1 overflow-hidden">
+                        <p class="fw-medium text-truncate mb-0">Jospreet Anand</p>
+                        <p class="small text-secondary text-truncate mb-0">3 hours ago</p>
+                    </div>
+                    <div class="small text-secondary text-nowrap">12:15 PM</div>
+                </div>
+                <div class="conversation-item p-4 border-bottom border-gray-200 cursor-pointer d-flex align-items-center" data-user-id="amrita">
+                    <div class="position-relative">
+                        <img src="https://placehold.co/48x48/34d399/ffffff?text=A" alt="Amrita" class="rounded-circle" style="width: 48px; height: 48px;">
+                        <span class="position-absolute top-0 end-0 bg-danger text-white small rounded-circle d-flex justify-content-center align-items-center" style="width: 20px; height: 20px;">4</span>
+                    </div>
+                    <div class="ms-3 flex-grow-1 overflow-hidden">
+                        <p class="fw-medium text-truncate mb-0">Amrita Patel</p>
+                        <p class="small text-secondary text-truncate mb-0">1 day ago</p>
+                    </div>
+                    <div class="small text-secondary text-nowrap">12:15 PM</div>
+                </div>
+                <div class="conversation-item p-4 border-bottom border-gray-200 cursor-pointer d-flex align-items-center" data-user-id="mallika">
+                    <div class="position-relative">
+                        <img src="https://placehold.co/48x48/818cf8/ffffff?text=M" alt="Mallika" class="rounded-circle" style="width: 48px; height: 48px;">
+                    </div>
+                    <div class="ms-3 flex-grow-1 overflow-hidden">
+                        <p class="fw-medium text-truncate mb-0">Mallika Banerjee</p>
+                        <p class="small text-secondary text-truncate mb-0">1 day ago</p>
+                    </div>
+                    <div class="small text-secondary text-nowrap">12:15 PM</div>
+                </div>
+                <div class="conversation-item p-4 border-bottom border-gray-200 cursor-pointer d-flex align-items-center" data-user-id="neha">
+                    <div class="position-relative">
+                        <img src="https://placehold.co/48x48/a78bfa/ffffff?text=N" alt="Neha" class="rounded-circle" style="width: 48px; height: 48px;">
+                    </div>
+                    <div class="ms-3 flex-grow-1 overflow-hidden">
+                        <p class="fw-medium text-truncate mb-0">Neha Verma</p>
+                        <p class="small text-secondary text-truncate mb-0">1 day ago</p>
+                    </div>
+                    <div class="small text-secondary text-nowrap">12:15 PM</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Section (Middle Column) -->
+        <div id="chat-window" class="col-12 col-md-4 d-flex flex-column h-100 d-none d-md-flex">
+            <!-- Chat Header -->
+            <div class="p-4 border-bottom border-gray-200 d-flex align-items-center justify-content-between">
+                <!-- A back button for mobile view only -->
+                <a href="#" id="back-to-messages" class="text-secondary d-md-none me-3">
+                    <i class="fas fa-arrow-left fa-lg"></i>
+                </a>
+                <!-- User Info -->
+                <div id="open-profile" class="d-flex align-items-center cursor-pointer">
+                    <img src="https://placehold.co/40x40/f87171/ffffff?text=M" alt="User Profile" class="rounded-circle" style="width: 40px; height: 40px;">
+                    <span class="fw-bold fs-5 ms-2">Manpreet Acharya</span>
+                </div>
+                <!-- Icons -->
+                <div class="d-flex align-items-center ms-auto">
+                    <i class="fas fa-video text-secondary me-3 cursor-pointer"></i>
+                    <i class="fas fa-phone-alt text-secondary me-3 cursor-pointer"></i>
+                    <i class="fas fa-ellipsis-v text-secondary cursor-pointer"></i>
+                </div>
+            </div>
+
+            <!-- Messages List -->
+            <div class="flex-grow-1 overflow-y-auto p-4 d-flex flex-column-reverse">
+                <!-- Sent Message (Audio) -->
+                <div class="d-flex justify-content-end mb-3">
+                    <div class="bg-brand-red text-white p-2 rounded-4 rounded-end-0 d-flex align-items-center">
+                        <i class="fas fa-play-circle text-white me-2 cursor-pointer"></i>
+                        <div class="audio-wave me-2"></div>
+                        <span class="small text-white text-opacity-75">00:15</span>
+                    </div>
+                    <img src="https://placehold.co/40x40/6b7280/ffffff?text=Y" alt="You" class="rounded-circle ms-3" style="width: 40px; height: 40px;">
+                </div>
+                <!-- Sent Message -->
+                <div class="d-flex justify-content-end mb-3">
+                    <div class="bg-brand-red text-white p-3 rounded-4 rounded-end-0">
+                        <p class="small mb-1">Hey, I wanted to say I had a great time last night.</p>
+                        <span class="small text-white text-opacity-75">12:15 PM</span>
+                    </div>
+                    <img src="https://placehold.co/40x40/6b7280/ffffff?text=Y" alt="You" class="rounded-circle ms-3" style="width: 40px; height: 40px;">
+                </div>
+                <!-- Received Message (Audio) -->
+                <div class="d-flex align-items-start mb-3">
+                    <img src="https://placehold.co/40x40/f87171/ffffff?text=M" alt="Manpreet" class="rounded-circle me-3" style="width: 40px; height: 40px;">
+                    <div class="bg-light p-2 rounded-4 rounded-start-0 d-flex align-items-center">
+                        <i class="fas fa-play-circle text-secondary me-2 cursor-pointer"></i>
+                        <div class="audio-wave me-2"></div>
+                        <span class="small text-secondary">02:13</span>
+                    </div>
+                </div>
+                <!-- Received Message (Text) -->
+                <div class="d-flex align-items-start mb-3">
+                    <img src="https://placehold.co/40x40/f87171/ffffff?text=M" alt="Manpreet" class="rounded-circle me-3" style="width: 40px; height: 40px;">
+                    <div class="bg-light p-3 rounded-4 rounded-start-0">
+                        <p class="small mb-1">I'll catch up with you soon!</p>
+                        <span class="small text-secondary">12:15 PM</span>
+                    </div>
+                </div>
+                <!-- Image Messages -->
+                <div class="d-flex justify-content-end mb-3">
+                    <div class="d-flex flex-column align-items-end">
+                        <div class="profile-media-grid mb-2">
+                            <img src="https://placehold.co/100x100/A0A0A0/ffffff?text=Img1" alt="Image" class="rounded-3">
+                            <img src="https://placehold.co/100x100/A0A0A0/ffffff?text=Img2" alt="Image" class="rounded-3">
+                            <img src="https://placehold.co/100x100/A0A0A0/ffffff?text=Img3" alt="Image" class="rounded-3">
+                            <img src="https://placehold.co/100x100/A0A0A0/ffffff?text=Img4" alt="Image" class="rounded-3">
+                        </div>
+                        <div class="small text-secondary">12:15 PM</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Message Input Area -->
+            <div class="p-4 border-top border-gray-200">
+                <div class="d-flex align-items-center">
+                    <input type="text" placeholder="Write your message here..." class="form-control rounded-pill flex-grow-1 me-2 py-3 px-4">
+                    <i class="fas fa-paperclip text-secondary fs-5 me-2 cursor-pointer"></i>
+                    <i class="fas fa-microphone text-secondary fs-5 me-2 cursor-pointer"></i>
+                    <button class="btn bg-brand-red text-white rounded-circle d-flex justify-content-center align-items-center" style="width: 40px; height: 40px;">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile and Media Section (Right Column) - Desktop Only -->
+        <div id="profile-view" class="col-12 col-md-4 d-flex flex-column border-start border-gray-200 d-none d-md-flex">
+            <!-- Profile Header for Mobile -->
+            <div class="p-4 border-bottom border-gray-200 d-md-none d-flex align-items-center">
+                <a href="#" id="back-to-chat" class="text-secondary me-3">
+                    <i class="fas fa-arrow-left fa-lg"></i>
+                </a>
+                <h3 class="fw-bold fs-5 mb-0">Profile</h3>
+            </div>
+            <!-- Profile Info -->
+            <div class="p-4 border-bottom border-gray-200 flex-grow-1 d-flex flex-column align-items-center justify-content-center">
+                <img src="https://placehold.co/150x150/f87171/ffffff?text=M" alt="User Profile" class="rounded-circle mb-3" style="width: 150px; height: 150px;">
+                <h3 class="fw-bold fs-4">Manpreet Acharya</h3>
+                <p class="text-secondary small mb-0">13 Jun 1989</p>
+                <p class="text-secondary small mt-1 mb-0">6 Feet and 3 Inches</p>
+                <a href="#" class="text-brand-red small mt-2 text-decoration-none">See profile</a>
+            </div>
+
+            <!-- Media Section -->
+            <div class="p-4 flex-grow-1 profile-media-container">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="fw-semibold text-dark">Media</h4>
+                    <a href="#" class="small text-secondary text-decoration-none">Show more</a>
+                </div>
+                <div class="profile-media-grid">
+                    <img src="https://placehold.co/100x100/D0D0D0/333333?text=Img1" alt="Media" class="rounded-3 w-100 h-100 object-fit-cover">
+                    <img src="https://placehold.co/100x100/D0D0D0/333333?text=Img2" alt="Media" class="rounded-3 w-100 h-100 object-fit-cover">
+                    <img src="https://placehold.co/100x100/D0D0D0/333333?text=Img3" alt="Media" class="rounded-3 w-100 h-100 object-fit-cover">
+                    <img src="https://placehold.co/100x100/D0D0D0/333333?text=Img4" alt="Media" class="rounded-3 w-100 h-100 object-fit-cover">
+                    <img src="https://placehold.co/100x100/D0D0D0/333333?text=Img5" alt="Media" class="rounded-3 w-100 h-100 object-fit-cover">
+                    <img src="https://placehold.co/100x100/D0D0D0/333333?text=Img6" alt="Media" class="rounded-3 w-100 h-100 object-fit-cover">
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <!-- Scripts -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/all.min.js"></script>
+     <script>
+        // JS for handling the mobile view toggle
+        const messageList = document.getElementById('message-list');
+        const chatWindow = document.getElementById('chat-window');
+        const profileView = document.getElementById('profile-view');
+        const backToMessagesButton = document.getElementById('back-to-messages');
+        const openProfileButton = document.getElementById('open-profile');
+        const backToChatButton = document.getElementById('back-to-chat');
+        const conversationItems = document.querySelectorAll('.conversation-item');
+
+        // Function to show the chat window and hide the message list
+        function showChat() {
+            messageList.classList.add('d-none');
+            chatWindow.classList.remove('d-none');
+        }
+
+        // Function to show the message list and hide the chat and profile windows
+        function showMessageList() {
+            messageList.classList.remove('d-none');
+            chatWindow.classList.add('d-none');
+            profileView.classList.add('d-none');
+        }
+
+        // Function to show the profile view and hide the chat window on mobile
+        function showProfile() {
+            chatWindow.classList.add('d-none');
+            profileView.classList.remove('d-none');
+        }
+
+        // Add click listeners to all conversation items to show the chat
+        conversationItems.forEach(item => {
+            item.addEventListener('click', showChat);
+        });
+
+        // Add click listener to the back button on mobile to go back to the list
+        backToMessagesButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            showMessageList();
+        });
+
+        // Add click listener to the "open profile" button in the chat header
+        openProfileButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            // Only show profile on mobile (less than 768px)
+            if (window.innerWidth < 768) {
+                showProfile();
+            }
+        });
+
+        // Add click listener to the back button in the profile view
+        backToChatButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            showChat();
+        });
+
+        // Listen for window resize to handle responsiveness
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) { // md breakpoint in Bootstrap is 768px
+                // On desktop, ensure all columns are visible
+                messageList.classList.remove('d-none');
+                chatWindow.classList.remove('d-none');
+                profileView.classList.remove('d-none');
+            } else {
+                // On mobile, show only one view at a time based on the active state
+                if (!chatWindow.classList.contains('d-none')) {
+                    messageList.classList.add('d-none');
+                    profileView.classList.add('d-none');
+                } else if (!profileView.classList.contains('d-none')) {
+                    messageList.classList.add('d-none');
+                    chatWindow.classList.add('d-none');
+                } else {
+                    messageList.classList.remove('d-none');
+                    chatWindow.classList.add('d-none');
+                    profileView.classList.add('d-none');
+                }
+            }
+        });
+    </script>
+</body>
+</html>

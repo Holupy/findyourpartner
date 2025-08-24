@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HolupyFX | Find Your Partner</title>
+    <link rel="shortcut icon" href="img/LOGO.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        :root {
+    --primary-color: #A36B73;
+    --secondary-color: #4B4B4B;
+    --text-light: #f8f9fa;
+    --text-dark: #343a40;
+    --bg-overlay: rgba(52, 58, 64, 0.735);
+    --hover-gradient: linear-gradient(to right, #B77F88, #926A74);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-dark);
+}
+
+/* --- Landing Page Section --- */
+.landing-page {
+    position: relative;
+    height: 100vh;
+    background: url('img/young-interracial-couple-lying-rug-taking-selfie-mobile-phone.jpg') no-repeat center center/cover;
+}
+
+.landing-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-overlay);
+    z-index: 1;
+}
+
+.navbar,
+.main-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* --- Navigation --- */
+.navbar-brand {
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--text-light) !important;
+}
+
+.logo-dot {
+    color: var(--primary-color);
+    font-size: 2rem;
+    line-height: 0;
+}
+
+.btn-contact {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--text-light);
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.btn-contact:hover {
+    background-color: #B2828B;
+    border-color: #B2828B;
+}
+
+/* --- Main Content --- */
+.main-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 80px); /* Adjust for navbar height */
+}
+
+.tagline {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0.5rem;
+}
+
+.main-heading {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text-light);
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-gender {
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.btn-male {
+    background: var(--primary-color);
+    color: var(--text-light);
+}
+
+.btn-male:hover {
+    background: var(--hover-gradient);
+    transform: translateY(-3px);
+}
+
+.btn-female {
+    background: transparent;
+    border-color: var(--text-light);
+    color: var(--text-light);
+}
+
+.btn-female:hover {
+    background: var(--hover-gradient);
+    border-color: transparent;
+    transform: translateY(-3px);
+}
+
+.login-link a {
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.3s ease;
+}
+
+.login-link a:hover {
+    color: var(--text-light);
+}
+
+/* --- Modal Styles --- */
+.modal-content {
+    border-radius: 1rem;
+    background-color: #fff;
+}
+
+.modal-title {
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.modal-description {
+    color: #6c757d;
+}
+
+.form-label {
+    font-weight: 500;
+    color: var(--secondary-color);
+}
+
+.form-control {
+    border-radius: 0.5rem;
+    border: 1px solid #ced4da;
+    padding: 0.75rem 1rem;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    font-weight: 500;
+}
+
+.btn-primary:hover {
+    background-color: #926A74;
+    border-color: #926A74;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    font-weight: 500;
+}
+    </style>
+</head>
+
+<body>
+    <section class="landing-page">
+        <nav class="navbar navbar-expand-lg container-fluid">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">HolupyFX <span class="logo-dot">.</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a href="#" class="btn btn-contact rounded-pill" data-bs-toggle="modal" data-bs-target="#contactModal">
+                                <i class="fas fa-phone me-2"></i> Contact Us
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="main-content">
+            <div class="container text-center">
+                <p class="tagline">Find Your Perfect Match</p>
+                <h1 class="main-heading">CHOOSE YOUR IDENTITY TO FIND YOUR PARTNER</h1>
+                <div class="button-group">
+                    <a href="signup.html" class="btn btn-gender btn-male"><i class="fa-solid fa-mars me-2"></i>Male</a>
+                    <a href="signup.html" class="btn btn-gender btn-female"><i class="fa-solid fa-venus me-2"></i>Female</a>
+                </div>
+                <div class="login-link">
+                    <p style="color: var(--primary-color);">Already have an account? <a href="login.html" class="text-white-50 text-decoration-none">Log in here</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0 pb-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-5">
+                    <h2 class="modal-title mb-2">Having Issues Signing Up?</h2>
+                    <p class="modal-description mb-4">We apologize for the inconvenience. Please fill out the form below to submit your complaint.</p>
+                    <form action="" class="row g-4">
+                        <div class="col-lg-6">
+                            <label for="firstName" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="firstName" placeholder="John">
+                        </div>
+                        <div class="col-lg-6">
+                            <label for="lastName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="lastName" placeholder="Doe">
+                        </div>
+                        <div class="col-12">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="johndoe@example.com">
+                        </div>
+                        <div class="col-12">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea name="message" id="message" rows="4" class="form-control" placeholder="Tell us what's on your mind..."></textarea>
+                        </div>
+                        <div class="col-12 d-flex justify-content-between">
+                            <button type="submit" class="btn btn-primary"><i class="fas fa-envelope me-2"></i>Send Message</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/all.min.js"></script>
+</body>
+</html>

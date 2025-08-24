@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dating</title>
+    <link rel="shortcut icon" href="img/LOGO.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.css">
+    <link rel="stylesheet" href="css/boxicons.min.css">
+     <!-- Inter Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    
+    <!-- Custom CSS for what im looking for styling -->
+    <style>
+        :root {
+            --brand-red: #a52a2a;
+            --brand-brown-dark: #34211ed0;
+            --brand-light-gray: #f3f4f6;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--brand-light-gray);
+        }
+
+        .btn-brand-red {
+            background-color: var(--brand-red);
+            color: white;
+            border: none;
+        }
+        .btn-brand-red:hover {
+            background-color: var(--brand-brown-dark);
+        }
+
+        .text-brand-red { color: var(--brand-red); }
+
+        .btn-toggle-option {
+            border: 1px solid var(--border-color);
+            color: #4b5563; /* Gray-700 */
+            background-color: white;
+            padding: 0.75rem 1.5rem;
+            font-weight: 500;
+            border-radius: 9999px; /* rounded-full */
+            transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+        }
+
+        .btn-toggle-option.active {
+            background-color: var(--brand-red);
+            border-color: var(--brand-red);
+            color: white;
+        }
+        
+        .form-control-custom,
+        .form-select-custom {
+            border-radius: 0.75rem;
+            border: 1px solid var(--border-color);
+            padding: 0.75rem 1rem;
+            box-shadow: none;
+            transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .form-control-custom:focus,
+        .form-select-custom:focus {
+            border-color: var(--brand-red);
+            box-shadow: 0 0 0 0.25rem rgba(165, 42, 42, 0.25);
+        }
+
+        .range-slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 8px;
+            background: var(--border-color);
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .range-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: var(--brand-red);
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid white;
+            box-shadow: 0 0 5px rgba(0,0,0,0.15);
+        }
+
+        .range-slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: var(--brand-red);
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid white;
+            box-shadow: 0 0 5px rgba(0,0,0,0.15);
+        }
+
+        .card-form {
+            background-color: #fff;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .icon-circle {
+            background-color: rgba(165, 42, 42, 0.1);
+            color: var(--brand-red);
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body class="d-flex min-vh-100 justify-content-center align-items-center p-3">
+
+    <!-- Main Content Container -->
+    <div class="container-fluid card-form p-4 p-md-5" style="max-width: 900px;">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <a href="lovoon.html" class="btn btn-light rounded-circle border p-2">
+                <i class="fa-solid fa-arrow-left text-muted"></i>
+            </a>
+            <h1 class="fs-4 fw-bold text-center flex-grow-1 mb-0">What am I looking for?</h1>
+            <a href="editprofile.html" class="btn btn-light rounded-circle border p-2">
+                <i class="fa-solid fa-xmark text-muted"></i>
+            </a>
+        </div>
+        
+        <form>
+            <div class="row g-4 mb-4">
+                <!-- Turban -->
+                <div class="col-12 col-md-4">
+                    <p class="mb-2 fw-medium">Turban<span class="text-brand-red">*</span></p>
+                    <div class="btn-group w-100" role="group">
+                        <button type="button" class="btn btn-toggle-option active">Yes</button>
+                        <button type="button" class="btn btn-toggle-option">No</button>
+                        <button type="button" class="btn btn-toggle-option">No pref.</button>
+                    </div>
+                </div>
+                <!-- Amritdhari Sikh -->
+                <div class="col-12 col-md-4">
+                    <p class="mb-2 fw-medium">Amritdhari Sikh<span class="text-brand-red">*</span></p>
+                    <div class="btn-group w-100" role="group">
+                        <button type="button" class="btn btn-toggle-option active">Yes</button>
+                        <button type="button" class="btn btn-toggle-option">No</button>
+                        <button type="button" class="btn btn-toggle-option">No pref.</button>
+                    </div>
+                </div>
+                <!-- Vegetarian -->
+                <div class="col-12 col-md-4">
+                    <p class="mb-2 fw-medium">Vegetarian<span class="text-brand-red">*</span></p>
+                    <div class="btn-group w-100" role="group">
+                        <button type="button" class="btn btn-toggle-option">Yes</button>
+                        <button type="button" class="btn btn-toggle-option active">No</button>
+                        <button type="button" class="btn btn-toggle-option">No pref.</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 mb-4">
+                <!-- Age -->
+                <div class="col-12 col-md-6">
+                    <div class="d-flex align-items-center mb-2">
+                        <div class="icon-circle me-2"><i class="fa-solid fa-user"></i></div>
+                        <p class="mb-0 fw-medium">Age</p>
+                    </div>
+                    <div class="row g-2 align-items-center">
+                        <div class="col-3">
+                            <input type="text" class="form-control form-control-custom text-center fw-bold" placeholder="00" value="25">
+                        </div>
+                        <div class="col-auto">-</div>
+                        <div class="col-3">
+                            <input type="text" class="form-control form-control-custom text-center fw-bold" placeholder="00" value="35">
+                        </div>
+                        <div class="col-12">
+                            <input type="range" class="form-range range-slider" min="18" max="60" value="30">
+                        </div>
+                    </div>
+                </div>
+                <!-- Height -->
+                <div class="col-12 col-md-6">
+                    <div class="d-flex align-items-center mb-2">
+                        <div class="icon-circle me-2"><i class="fa-solid fa-ruler-vertical"></i></div>
+                        <p class="mb-0 fw-medium">Height</p>
+                    </div>
+                    <div class="row g-2">
+                        <div class="col-4">
+                            <input type="text" class="form-control form-control-custom text-center" placeholder="Feet">
+                        </div>
+                        <div class="col-4">
+                            <input type="text" class="form-control form-control-custom text-center" placeholder="Inch">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 mb-4">
+                <!-- Education Level -->
+                <div class="col-12 col-md-6">
+                    <div class="d-flex align-items-center mb-2">
+                        <div class="icon-circle me-2"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <p class="mb-0 fw-medium">Education Level</p>
+                    </div>
+                    <input type="text" class="form-control form-control-custom" placeholder="Education Level">
+                    <p class="text-muted mb-0"><small>You can select multiple options</small></p>
+                </div>
+                <!-- Location -->
+                <div class="col-12 col-md-6">
+                    <div class="d-flex align-items-center mb-2">
+                        <div class="icon-circle me-2"><i class="fa-solid fa-location-dot"></i></div>
+                        <p class="mb-0 fw-medium">Location</p>
+                    </div>
+                    <input type="text" class="form-control form-control-custom" placeholder="Location">
+                </div>
+            </div>
+
+            <div class="d-grid mt-4">
+                <button type="submit" class="btn btn-brand-red rounded-pill px-4 py-3 fw-medium shadow-sm">
+                    <i class="fa-solid fa-magnifying-glass me-2"></i>FIND MY MATCHES
+                </button>
+            </div>
+        </form>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/all.min.js"></script>
+    <script>
+        // JavaScript to handle the button toggle functionality
+        document.querySelectorAll('.btn-group button').forEach(button => {
+            button.addEventListener('click', function() {
+                // Find the parent button group
+                const parentGroup = this.closest('.btn-group');
+                // Remove 'active' class from all buttons in the group
+                parentGroup.querySelectorAll('button').forEach(btn => btn.classList.remove('active'));
+                // Add 'active' class to the clicked button
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
