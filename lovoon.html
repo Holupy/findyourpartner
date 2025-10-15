@@ -4,54 +4,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dating</title>
+    <title>HolupyFX Dating</title>
     <link rel="shortcut icon" href="img/LOGO.jpg" type="image/x-icon">
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/aos.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.css">
     <link rel="stylesheet" href="css/boxicons.min.css">
+    
     <!-- Inter Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 
     <!-- Custom CSS for dating styling -->
     <style>
         :root {
-            --brand-red: #a52a2ae7;
-            --brand-brown-dark: #34211ed0;
-            --brand-light-gray: #f3f4f6;
+            --brand-red: #e74c3c;
+            --brand-red-dark: #c0392b;
+            --brand-purple: #8e44ad;
+            --brand-dark: #121212;
+            --brand-dark-light: #1e1e1e;
+            --brand-dark-lighter: #2d2d2d;
+            --brand-light: #ffffff;
+            --brand-gray: #cccccc;
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--brand-light-gray);
+            background-color: var(--brand-dark);
+            color: var(--brand-light);
+            overflow-x: hidden;
         }
 
         .btn-brand-red {
             background-color: var(--brand-red);
             color: white;
             border: none;
+            transition: all 0.2s ease;
         }
         .btn-brand-red:hover {
-            background-color: var(--brand-brown-dark);
+            background-color: var(--brand-red-dark);
+            transform: translateY(-1px);
         }
         .text-brand-red { color: var(--brand-red); }
-        .text-brand-brown-dark { color: var(--brand-brown-dark); }
+        .text-brand-gray { color: var(--brand-gray); }
+        
         .card-profile {
-            background-color: #fff;
+            background-color: var(--brand-dark-light);
             border-radius: 1.5rem;
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--brand-dark-lighter);
         }
+        
         .profile-img-container {
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            border: 4px solid #fff;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border: 4px solid var(--brand-dark-light);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
             margin-top: -75px;
         }
+        
         .bg-profile-header {
             background-image: url('img/male/front-view-smiley-man-outdoors.jpg');
             background-size: cover;
@@ -60,32 +72,40 @@
             border-top-left-radius: 1.5rem;
             border-top-right-radius: 1.5rem;
         }
+        
         .nav-link.active .fa-solid, .nav-link.active .fa-regular {
             color: var(--brand-red);
         }
+        
         .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-            color: var(--bs-nav-pills-link-active-color);
-            background-color: var(--brand-brown-dark);
+            color: var(--brand-light);
+            background-color: var(--brand-red);
         }
+        
         .card-user {
+            background-color: var(--brand-dark-light);
             border-radius: 1rem;
             overflow: hidden;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            transition: transform 0.2s ease;
+            border: 1px solid var(--brand-dark-lighter);
         }
+        
         .card-user:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.15);
+            transform: translateY(-3px);
         }
+        
         /* Adjusted carousel image height as requested */
         .owl-carousel .item img {
             height: 150px; 
             object-fit: cover;
         }
+        
         .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
             background: var(--brand-red);
         }
+        
         .owl-carousel {
-            user-select: none; /* Disables text selection inside carousel */
+            user-select: none;
         }
         
         /* Custom styles for the collapsing sidebar on large screens */
@@ -93,23 +113,21 @@
             .sidebar-collapse {
                 width: 80px;
                 transition: width 0.3s ease;
+                background-color: var(--brand-dark-light);
             }
             .sidebar-collapse:hover {
                 width: 250px;
             }
-            /* Hide the text for both nav links and the main title by default */
             .sidebar-collapse .nav-link span,
             .sidebar-collapse .logo-text {
                 display: none;
                 opacity: 0;
                 transition: opacity 0.3s ease;
             }
-            /* Show the text on hover for both nav links and the main title */
             .sidebar-collapse:hover .nav-link span,
             .sidebar-collapse:hover .logo-text {
                 display: inline;
                 opacity: 1;
-                animation: fadeIn 0.3s ease forwards;
             }
             .sidebar-collapse .nav-link {
                 justify-content: center;
@@ -117,83 +135,100 @@
             .sidebar-collapse:hover .nav-link {
                 justify-content: flex-start;
             }
-            /* Adjust icon margin for collapsed state */
             .sidebar-collapse .nav-link i {
                 margin-right: 0 !important;
             }
-            /* Restore icon margin on hover */
             .sidebar-collapse:hover .nav-link i {
                 margin-right: 1rem !important;
             }
         }
         
-        /* Mobile Bottom Navigation Hover Effects */
+        /* Mobile Bottom Navigation */
         .d-block.d-md-none.fixed-bottom .nav-link {
             position: relative;
             padding: 10px 5px;
-            transition: all 0.3s ease;
-            transform-origin: center;
+            transition: all 0.2s ease;
         }
 
-        .d-block.d-md-none.fixed-bottom .nav-link i {
-            transition: all 0.3s ease;
-        }
-
-        /* Hover effects */
         .d-block.d-md-none.fixed-bottom .nav-link:hover {
-            transform: scale(1.4);
-            z-index: 1001;
+            transform: scale(1.2);
         }
 
-        .d-block.d-md-none.fixed-bottom .nav-link:hover i {
-            transform: translateY(-5px);
-        }
-
-        /* Underline effect */
-        .d-block.d-md-none.fixed-bottom .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 5px;
-            left: 50%;
-            width: 0;
-            height: 3px;
-            background-color: var(--brand-red);
-            border-radius: 3px;
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-        }
-
-        .d-block.d-md-none.fixed-bottom .nav-link:hover::after,
-        .d-block.d-md-none.fixed-bottom .nav-link.active::after {
-            width: 70%;
-        }
-
-        /* Active state */
         .d-block.d-md-none.fixed-bottom .nav-link.active {
             color: var(--brand-red) !important;
-            transform: scale(1.3);
+            transform: scale(1.1);
         }
 
-        .d-block.d-md-none.fixed-bottom .nav-link.active i {
-            transform: translateY(-3px);
+        /* Dark theme adjustments - ALL TEXT WHITE */
+        .text-dark { color: var(--brand-light) !important; }
+        .text-muted { color: var(--brand-light) !important; }
+        .bg-white { background-color: var(--brand-dark-light) !important; }
+        .shadow-sm { box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.4) !important; }
+        .shadow-lg { box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.5) !important; }
+        .border-0 { border: none !important; }
+        
+        .nav-tabs .nav-link {
+            color: var(--brand-light);
         }
-
-        /* Ensure text doesn't show on mobile */
-        .d-block.d-md-none.fixed-bottom .nav-link span {
-            display: none;
+        
+        .nav-tabs .nav-link.active {
+            color: var(--brand-light);
+            background-color: var(--brand-red);
+            border-color: var(--brand-red);
+        }
+        
+        .btn-outline-secondary {
+            color: var(--brand-light);
+            border-color: var(--brand-dark-lighter);
+        }
+        
+        .btn-outline-secondary:hover {
+            background-color: var(--brand-dark-lighter);
+            color: var(--brand-light);
+            border-color: var(--brand-light);
+        }
+        
+        a {
+            color: var(--brand-light);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            color: var(--brand-red);
+        }
+        
+        hr {
+            border-color: var(--brand-dark-lighter);
+        }
+        
+        /* Card text colors */
+        .card-title, .card-text, .card-body h6, .card-body p {
+            color: var(--brand-light) !important;
+        }
+        
+        .card-text small {
+            color: var(--brand-gray) !important;
+        }
+        
+        /* Simple fade-in animation */
+        .fade-in {
+            animation: fadeIn 0.3s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </head>
 <body class="d-flex min-vh-100 flex-column flex-md-row">
 
-    <!-- Left Sidebar (Desktop Only) - Now with collapsing functionality -->
+    <!-- Left Sidebar (Desktop Only) -->
     <div class="d-none d-md-flex flex-column bg-white p-4 shadow-sm sidebar-collapse">
-        <!-- Logo and App Name - Hide text on collapse -->
         <div class="d-flex align-items-center mb-5">
             <img src="https://placehold.co/40x40/94a3b8/e2e8f0?text=L" alt="Logo" class="rounded-circle me-2">
             <span class="fw-bold fs-4 text-dark logo-text">HolupyFX</span>
         </div>
-        <!-- Navigation Links -->
         <ul class="nav nav-pills flex-column gap-3">
             <li class="nav-item">
                 <a class="nav-link active rounded-pill d-flex align-items-center" href="#">
@@ -234,32 +269,31 @@
             <!-- Left Content Column -->
             <div class="col-md-7 d-flex flex-column">
                 <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h1 class="fs-2 fw-bold text-dark" data-aos="fade-right">Hi, Kulvir</h1>
-                    <button class="btn btn-brand-red rounded-pill px-4 py-2 fw-medium shadow-sm" data-aos="fade-left">
+                    <h1 class="fs-2 fw-bold text-dark">Hi, Kulvir</h1>
+                    <button class="btn btn-brand-red rounded-pill px-4 py-2 fw-medium shadow-sm">
                         <i class="fa-solid fa-magnifying-glass me-2"></i>FIND MY MATCHES
                     </button>
                 </div>
 
-                <!-- Mutually Interested Profiles Section with Carousel -->
-                <div class="mb-4" data-aos="fade-up">
+                <!-- Mutually Interested Profiles Section -->
+                <div class="mb-4 fade-in">
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <h5 class="fw-bold text-dark">Mutually Interested Profiles</h5>
                         <a href="#" class="text-brand-red text-decoration-none">SEE ALL <i class="fa-solid fa-arrow-right-long ms-1"></i></a>
                     </div>
                     <div id="mutuallyInterestedCarousel" class="owl-carousel owl-theme">
-                        <!-- Carousel Items -->
                         <div class="item card card-user border-0 shadow-sm">
                             <img src="img/female/horizontal-stylish-beautiful-young-afro-american-her-twenties-posing-isolated-indoors-with-confident-smile-crossing-arms-her-chest-people-lifestyle-fashion-concept.jpg" class="card-img-top" alt="User Harps">
                             <div class="card-body p-3">
                                 <h6 class="card-title fw-bold mb-0">Harps, 29</h6>
-                                <p class="card-text text-muted mb-0"><small>IT • Canada</small></p>
+                                <p class="card-text mb-0"><small>IT • Canada</small></p>
                             </div>
                         </div>
                         <div class="item card card-user border-0 shadow-sm">
                             <img src="img/female/bach-tran-AlPXiTjELGc-unsplash.jpg" class="card-img-top" alt="User Manpreet">
                             <div class="card-body p-3">
                                 <h6 class="card-title fw-bold mb-0">Manpreet, 29</h6>
-                                <p class="card-text text-muted mb-0"><small>Healthcare • UK</small></p>
+                                <p class="card-text mb-0"><small>Healthcare • UK</small></p>
                             </div>
                         </div>
                        <a href="showinterest.html">
@@ -267,7 +301,7 @@
                             <img src="img/female/explain-yourself-displeased-angry-young-attractive-girlfriend-gloomy-look-camera-disappointed-cross-arms-chest-defensive-standing-offended-sulking-stare-camera-assured-assertive-white-background.jpg" class="card-img-top" alt="User Jaspreet">
                             <div class="card-body p-3">
                                 <h6 class="card-title fw-bold mb-0">Jaspreet, 28</h6>
-                                <p class="card-text text-muted mb-0"><small>Management • UK</small></p>
+                                <p class="card-text mb-0"><small>Management • UK</small></p>
                             </div>
                         </div>
                        </a>
@@ -275,53 +309,52 @@
                             <img src="img/female/joshua-rawson-harris-7mfSzu6_qvA-unsplash.jpg" class="card-img-top" alt="User Rayneet">
                             <div class="card-body p-3">
                                 <h6 class="card-title fw-bold mb-0">Rayneet, 26</h6>
-                                <p class="card-text text-muted mb-0"><small>Financial • UK</small></p>
+                                <p class="card-text mb-0"><small>Financial • UK</small></p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Interested in Me Section with Carousel -->
-                <div class="mb-4" data-aos="fade-up">
+                <!-- Interested in Me Section -->
+                <div class="mb-4 fade-in">
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <h5 class="fw-bold text-dark">Interested in me</h5>
                         <a href="#" class="text-brand-red text-decoration-none">SEE ALL <i class="fa-solid fa-arrow-right-long ms-1"></i></a>
                     </div>
                     <div id="interestedInMeCarousel" class="owl-carousel owl-theme">
-                        <!-- Carousel Items -->
                         <div class="item card card-user border-0 shadow-sm">
                             <img src="img/female/beautiful-african-girl-smiling-sitting-white-wall-copy-space.jpg" class="card-img-top" alt="User Aishwiya">
                             <div class="card-body p-3">
                                 <h6 class="card-title fw-bold mb-0">Aishwiya, 26</h6>
-                                <p class="card-text text-muted mb-0"><small>IT • UK</small></p>
+                                <p class="card-text mb-0"><small>IT • UK</small></p>
                             </div>
                         </div>
                         <div class="item card card-user border-0 shadow-sm">
                             <img src="img/female/portrait-blissful-lovable-woman-with-blond-african-hairstyle-with-big-lips-stick.jpg" class="card-img-top" alt="User Munira">
                             <div class="card-body p-3">
                                 <h6 class="card-title fw-bold mb-0">Munira, 26</h6>
-                                <p class="card-text text-muted mb-0"><small>Healthcare • UK</small></p>
+                                <p class="card-text mb-0"><small>Healthcare • UK</small></p>
                             </div>
                         </div>
                         <div class="item card card-user border-0 shadow-sm">
                             <img src="img/female/portrait-cute-good-looking-young-african-american-woman-striped-outfit-grinning-with-casual-carefree-relaxed-expression-chilling-grey-wall.jpg" class="card-img-top" alt="User Sneha">
                             <div class="card-body p-3">
                                 <h6 class="card-title fw-bold mb-0">Sneha, 28</h6>
-                                <p class="card-text text-muted mb-0"><small>IT • UK</small></p>
+                                <p class="card-text mb-0"><small>IT • UK</small></p>
                             </div>
                         </div>
                         <div class="item card card-user border-0 shadow-sm">
                             <img src="img/female/expressive-african-american-girl-black-jacket.jpg" class="card-img-top" alt="User Phanita">
                             <div class="card-body p-3">
                                 <h6 class="card-title fw-bold mb-0">Phanita, 26</h6>
-                                <p class="card-text text-muted mb-0"><small>Healthcare • UK</small></p>
+                                <p class="card-text mb-0"><small>Healthcare • UK</small></p>
                             </div>
                         </div>
                         <div class="item card card-user border-0 shadow-sm">
                             <img src="img/female/beautiful-african-girl-smiling-sitting-white-wall-copy-space.jpg" class="card-img-top" alt="User Varsha">
                             <div class="card-body p-3">
                                 <h6 class="card-title fw-bold mb-0">Varsha, 26</h6>
-                                <p class="card-text text-muted mb-0"><small>Management • UK</small></p>
+                                <p class="card-text mb-0"><small>Management • UK</small></p>
                             </div>
                         </div>
                     </div>
@@ -329,19 +362,19 @@
             </div>
 
             <!-- Right Profile Column (Desktop Only) -->
-            <div class="col-md-5 d-none d-md-block" data-aos="fade-left">
-                <div class="card card-profile border-0 shadow-sm text-center">
+            <div class="col-md-5 d-none d-md-block">
+                <div class="card card-profile border-0 shadow-sm text-center fade-in">
                     <div class="bg-profile-header"></div>
                     <div class="d-flex justify-content-center">
                         <img src="img/male/front-view-smiley-man-posing-outdoors.jpg" alt="Kulvir Kang" class="img-fluid rounded-circle profile-img-container">
                     </div>
                     <div class="card-body pt-0">
                         <h4 class="fw-bold mb-1">Kulvir Kang</h4>
-                        <p class="text-muted mb-3"><small>Project Management • UK</small></p>
+                        <p class="mb-3"><small>Project Management • UK</small></p>
                         
                         <ul class="nav nav-tabs justify-content-center border-0 mb-3" id="profileTab" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <button  class="nav-link active rounded-pill me-2 fw-medium" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="true">Profile</button>
+                                <button class="nav-link active rounded-pill me-2 fw-medium" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="true">Profile</button>
                             </li>
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link rounded-pill fw-medium" id="notification-tab" data-bs-toggle="tab" data-bs-target="#notification" type="button" role="tab" aria-controls="notification" aria-selected="false">Notification</button>
@@ -351,39 +384,39 @@
                         <div class="tab-content text-start" id="profileTabContent">
                             <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                 <h6 class="fw-bold">My Bio</h6>
-                                <p class="text-muted mb-3">Love spending time with family and friends, exploring new places for an adventure and ambitious looking for a gentleman who is ambitious, caring and respectful with a good sense of humor and family oriented.</p>
+                                <p class="mb-3">Love spending time with family and friends, exploring new places for an adventure and ambitious looking for a gentleman who is ambitious, caring and respectful with a good sense of humor and family oriented.</p>
                                 <hr class="my-3">
                                 <div class="row g-2">
                                     <div class="col-6">
-                                        <small class="text-muted">Date of Birth</small>
+                                        <small>Date of Birth</small>
                                         <p class="fw-bold mb-0">01 Apr 1989</p>
                                     </div>
                                     <div class="col-6">
-                                        <small class="text-muted">My Location</small>
+                                        <small>My Location</small>
                                         <p class="fw-bold mb-0">UK</p>
                                     </div>
                                     <div class="col-6">
-                                        <small class="text-muted">Type of Job/Industry</small>
+                                        <small>Type of Job/Industry</small>
                                         <p class="fw-bold mb-0">Project Management</p>
                                     </div>
                                     <div class="col-6">
-                                        <small class="text-muted">Height</small>
+                                        <small>Height</small>
                                         <p class="fw-bold mb-0">5'9" (180 cm)</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="notification" role="tabpanel" aria-labelledby="notification-tab">
-                                <p class="text-muted">Notification content placeholder.</p>
+                                <p>Notification content placeholder.</p>
                             </div>
                         </div>
 
                         <div class="d-grid gap-2 mt-4">
-                            <button class="btn btn-outline-secondary rounded-pill fw-medium">
-                                <a href="editprofile.html"><i class="fa-regular fa-user me-2"></i>MY PROFILE</a>
-                            </button>
-                            <button class="btn btn-outline-secondary rounded-pill fw-medium">
-                                <a href="whatamlookingfor.html"><i class="fa-solid fa-gear me-2"></i>SETTINGS</a>
-                            </button>
+                            <a href="editprofile.html" class="btn btn-outline-secondary rounded-pill fw-medium">
+                                <i class="fa-regular fa-user me-2"></i>MY PROFILE
+                            </a>
+                            <a href="whatamlookingfor.html" class="btn btn-outline-secondary rounded-pill fw-medium">
+                                <i class="fa-solid fa-gear me-2"></i>SETTINGS
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -391,30 +424,24 @@
         </div>
     </div>
 
-    <!-- Mobile Bottom Navigation (Visible on mobile only) -->
-    <!-- The text labels are now hidden using a custom CSS class -->
+    <!-- Mobile Bottom Navigation -->
     <nav class="d-block d-md-none fixed-bottom sticky-bottom bg-white shadow-lg p-2 rounded-top-4">
         <div class="container-fluid">
             <div class="d-flex justify-content-around">
                 <a class="nav-link text-center active" href="#">
                     <i class="fa-solid fa-house-chimney fs-5"></i>
-                    
                 </a>
-                <a class="nav-link text-center text-muted" href="#">
+                <a class="nav-link text-center" href="#">
                     <i class="fa-solid fa-heart fs-5"></i>
-                  
                 </a>
-                <a class="nav-link text-center text-muted" href="messages.html">
+                <a class="nav-link text-center" href="messages.html">
                     <i class="fa-solid fa-message fs-5"></i>
-                    
                 </a>
-                <a class="nav-link text-center text-muted" href="#">
+                <a class="nav-link text-center" href="#">
                     <i class="fa-regular fa-bell fs-5"></i>
-                    
                 </a>
-                <a class="nav-link text-center text-muted" href="editprofile.html">
+                <a class="nav-link text-center" href="editprofile.html">
                     <i class="fa-solid fa-user fs-5"></i>
-                   
                 </a>
             </div>
         </div>
@@ -424,15 +451,10 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/aos.js"></script>
+    <!-- REMOVED GSAP - Using simple CSS animations instead -->
     <script src="js/all.min.js"></script>
-    <script>
-        AOS.init({
-            duration: 800,
-            once: true,
-            offset: 50,
-        });
 
+    <script>
         $(document).ready(function() {
             // Initialize Owl Carousel for "Mutually Interested Profiles"
             $("#mutuallyInterestedCarousel").owlCarousel({

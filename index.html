@@ -1,276 +1,678 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HolupyFX | Find Your Partner</title>
-    <link rel="shortcut icon" href="img/LOGO.jpg" type="image/x-icon">
-  <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/aos.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <title>HolupyFX | Find Your Perfect Match</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-    --primary-color: #A36B73;
-    --secondary-color: #4B4B4B;
-    --text-light: #f8f9fa;
-    --text-dark: #343a40;
-    --bg-overlay: rgba(52, 58, 64, 0.735);
-    --hover-gradient: linear-gradient(to right, #B77F88, #926A74);
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    font-family: 'Inter', sans-serif;
-    color: var(--text-dark);
-}
+        body, html {
+            height: 100%;
+            width: 100%;
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            overflow-x: hidden;
+        }
 
-/* --- Landing Page Section --- */
-.landing-page {
-    position: relative;
-    height: 100vh;
-    background: url('img/young-interracial-couple-lying-rug-taking-selfie-mobile-phone.jpg') no-repeat center center/cover;
-}
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
 
-.landing-page::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--bg-overlay);
-    z-index: 1;
-}
+        /* Background */
+        .background-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
 
-.navbar,
-.main-content {
-    position: relative;
-    z-index: 2;
-}
+        .bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('img/young-interracial-couple-lying-rug-taking-selfie-mobile-phone.jpg') no-repeat center center;
+            background-size: cover;
+            filter: brightness(0.7);
+        }
 
-/* --- Navigation --- */
-.navbar-brand {
-    font-weight: 800;
-    font-size: 1.5rem;
-    color: var(--text-light) !important;
-}
+        .gradient-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(10,10,10,0.85) 0%, rgba(163,107,115,0.15) 100%);
+            z-index: 1;
+        }
 
-.logo-dot {
-    color: var(--primary-color);
-    font-size: 2rem;
-    line-height: 0;
-}
+        /* Navigation */
+        .nav {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+        }
 
-.btn-contact {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
-    color: var(--text-light);
-    font-weight: 500;
-    transition: background-color 0.3s ease;
-}
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
 
-.btn-contact:hover {
-    background-color: #B2828B;
-    border-color: #B2828B;
-}
+        .logo-accent {
+            color: #A36B73;
+        }
 
-/* --- Main Content --- */
-.main-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: calc(100vh - 80px); /* Adjust for navbar height */
-}
+        .contact-btn {
+            background: transparent;
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
 
-.tagline {
-    font-size: 1.25rem;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 0.5rem;
-}
+        .contact-btn:hover {
+            background: #A36B73;
+            border-color: #A36B73;
+        }
 
-.main-heading {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 700;
-    line-height: 1.2;
-    color: var(--text-light);
-    text-transform: uppercase;
-    margin-bottom: 2rem;
-}
+        /* Main Content */
+        .main-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 90%;
+            max-width: 800px;
+            z-index: 5;
+        }
 
-.button-group {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-bottom: 1rem;
-    flex-wrap: wrap;
-}
+        .pre-title {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            color: #A36B73;
+            margin-bottom: 1rem;
+            opacity: 0;
+        }
 
-.btn-gender {
-    padding: 0.75rem 2rem;
-    font-size: 1.1rem;
-    font-weight: 600;
-    border-radius: 50px;
-    border: 2px solid transparent;
-    transition: all 0.3s ease;
-}
+        .main-title {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+            opacity: 0;
+        }
 
-.btn-male {
-    background: var(--primary-color);
-    color: var(--text-light);
-}
+        .subtitle {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 3rem;
+            opacity: 0;
+        }
 
-.btn-male:hover {
-    background: var(--hover-gradient);
-    transform: translateY(-3px);
-}
+        .identity-section {
+            margin-bottom: 2rem;
+            opacity: 0;
+        }
 
-.btn-female {
-    background: transparent;
-    border-color: var(--text-light);
-    color: var(--text-light);
-}
+        .identity-title {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+            color: rgba(255,255,255,0.9);
+        }
 
-.btn-female:hover {
-    background: var(--hover-gradient);
-    border-color: transparent;
-    transform: translateY(-3px);
-}
+        .gender-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
 
-.login-link a {
-    color: rgba(255, 255, 255, 0.7);
-    transition: color 0.3s ease;
-}
+        .gender-btn {
+            width: 160px;
+            height: 160px;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            overflow: hidden;
+        }
 
-.login-link a:hover {
-    color: var(--text-light);
-}
+        .gender-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.6s ease;
+        }
 
-/* --- Modal Styles --- */
-.modal-content {
-    border-radius: 1rem;
-    background-color: #fff;
-}
+        .gender-btn:hover::before {
+            left: 100%;
+        }
 
-.modal-title {
-    font-weight: 700;
-    color: var(--secondary-color);
-}
+        .btn-male {
+            background: rgba(74, 107, 163, 0.2);
+            border: 2px solid rgba(74, 107, 163, 0.5);
+        }
 
-.modal-description {
-    color: #6c757d;
-}
+        .btn-female {
+            background: rgba(163, 107, 115, 0.2);
+            border: 2px solid rgba(163, 107, 115, 0.5);
+        }
 
-.form-label {
-    font-weight: 500;
-    color: var(--secondary-color);
-}
+        .gender-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
 
-.form-control {
-    border-radius: 0.5rem;
-    border: 1px solid #ced4da;
-    padding: 0.75rem 1rem;
-}
+        .btn-male:hover {
+            background: rgba(74, 107, 163, 0.4);
+            border-color: rgba(74, 107, 163, 0.8);
+        }
 
-.btn-primary {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
-    font-weight: 500;
-}
+        .btn-female:hover {
+            background: rgba(163, 107, 115, 0.4);
+            border-color: rgba(163, 107, 115, 0.8);
+        }
 
-.btn-primary:hover {
-    background-color: #926A74;
-    border-color: #926A74;
-}
+        .gender-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
 
-.btn-secondary {
-    background-color: #6c757d;
-    border-color: #6c757d;
-    font-weight: 500;
-}
+        .btn-male .gender-icon {
+            color: #4a6ba3;
+        }
+
+        .btn-female .gender-icon {
+            color: #A36B73;
+        }
+
+        .gender-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .login-link {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+            opacity: 0;
+        }
+
+        .login-link a {
+            color: #A36B73;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .login-link a:hover {
+            color: #B2828B;
+            text-decoration: underline;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 100;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: #1a1a1a;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 20px;
+            padding: 2.5rem;
+            position: relative;
+            transform: scale(0.9);
+            opacity: 0;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 1.5rem;
+            color: rgba(255,255,255,0.7);
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-modal:hover {
+            color: #A36B73;
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .modal-subtitle {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: rgba(255,255,255,0.9);
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 10px;
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #A36B73;
+            background: rgba(255,255,255,0.15);
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: #A36B73;
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: #B2828B;
+            transform: translateY(-2px);
+        }
+
+        /* Loading Screen */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0a0a0a;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+        }
+
+        .loader-text {
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            color: #A36B73;
+            margin-bottom: 2rem;
+        }
+
+        .progress-bar {
+            width: 200px;
+            height: 2px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background: #A36B73;
+            width: 0%;
+            border-radius: 2px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .gender-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .gender-btn {
+                width: 200px;
+            }
+            
+            .main-content {
+                width: 95%;
+            }
+            
+            .modal-content {
+                padding: 2rem 1.5rem;
+            }
+        }
     </style>
 </head>
-
 <body>
-    <section class="landing-page">
-        <nav class="navbar navbar-expand-lg container-fluid">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">HolupyFX <span class="logo-dot">.</span></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a href="#" class="btn btn-contact rounded-pill" data-bs-toggle="modal" data-bs-target="#contactModal">
-                                <i class="fas fa-phone me-2"></i> Contact Us
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="loader-text">HolupyFX</div>
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Background -->
+        <div class="background-wrapper">
+            <div class="bg-image"></div>
+            <div class="gradient-overlay"></div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="nav">
+            <div class="logo">holupy<span class="logo-accent">fx</span></div>
+            <button class="contact-btn">Contact Us</button>
         </nav>
 
+        <!-- Main Content -->
         <div class="main-content">
-            <div class="container text-center">
-                <p class="tagline">Find Your Perfect Match</p>
-                <h1 class="main-heading">CHOOSE YOUR IDENTITY TO FIND YOUR PARTNER</h1>
-                <div class="button-group">
-                    <a href="signup.html" class="btn btn-gender btn-male"><i class="fa-solid fa-mars me-2"></i>Male</a>
-                    <a href="signup.html" class="btn btn-gender btn-female"><i class="fa-solid fa-venus me-2"></i>Female</a>
-                </div>
-                <div class="login-link">
-                    <p style="color: var(--primary-color);">Already have an account? <a href="login.html" class="text-white-50 text-decoration-none">Log in here</a></p>
+            <div class="pre-title">Find Your Perfect Match</div>
+            <h1 class="main-title">CHOOSE YOUR IDENTITY TO FIND YOUR PARTNER</h1>
+            <p class="subtitle">Join our community and connect with like-minded individuals</p>
+            
+            <div class="identity-section">
+                <div class="identity-title">Select Your Gender</div>
+                <div class="gender-buttons">
+                    <div class="gender-btn btn-male" onclick="redirectToSignup('male')">
+                        <div class="gender-icon"><i class="fas fa-mars"></i></div>
+                        <div class="gender-text">Male</div>
+                    </div>
+                    <div class="gender-btn btn-female" onclick="redirectToSignup('female')">
+                        <div class="gender-icon"><i class="fas fa-venus"></i></div>
+                        <div class="gender-text">Female</div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header border-0 pb-0">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body p-5">
-                    <h2 class="modal-title mb-2">Having Issues Signing Up?</h2>
-                    <p class="modal-description mb-4">We apologize for the inconvenience. Please fill out the form below to submit your complaint.</p>
-                    <form action="" class="row g-4">
-                        <div class="col-lg-6">
-                            <label for="firstName" class="form-label">First Name</label>
-                            <input type="text" class="form-control" id="firstName" placeholder="John">
-                        </div>
-                        <div class="col-lg-6">
-                            <label for="lastName" class="form-label">Last Name</label>
-                            <input type="text" class="form-control" id="lastName" placeholder="Doe">
-                        </div>
-                        <div class="col-12">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="johndoe@example.com">
-                        </div>
-                        <div class="col-12">
-                            <label for="message" class="form-label">Message</label>
-                            <textarea name="message" id="message" rows="4" class="form-control" placeholder="Tell us what's on your mind..."></textarea>
-                        </div>
-                        <div class="col-12 d-flex justify-content-between">
-                            <button type="submit" class="btn btn-primary"><i class="fas fa-envelope me-2"></i>Send Message</button>
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
-                    </form>
-                </div>
+            
+            <div class="login-link">
+                Already have an account? <a href="login.html">Log in here</a>
             </div>
         </div>
     </div>
 
+    <!-- Contact Modal -->
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 class="modal-title">Contact Us</h2>
+            <p class="modal-subtitle">Having issues signing up? Send us a message and we'll help you out.</p>
+            
+            <form id="contactForm">
+                <div class="form-group">
+                    <label class="form-label" for="name">Your Name</label>
+                    <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="email">Email Address</label>
+                    <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="issue">Describe Your Issue</label>
+                    <textarea id="issue" class="form-control" placeholder="Tell us about the problem you're experiencing..." required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+
     <!-- Scripts -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/aos.js"></script>
-    <script src="js/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+        // Function to redirect to signup page with gender parameter
+        function redirectToSignup(gender) {
+            // Add click animation
+            const btn = event.currentTarget;
+            gsap.to(btn, {
+                scale: 0.95,
+                duration: 0.1,
+                yoyo: true,
+                repeat: 1,
+                onComplete: function() {
+                    // Redirect to signup page with gender parameter
+                    window.location.href = `signup.html?gender=${gender}`;
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Loading animation
+            const loadingTl = gsap.timeline();
+            
+            loadingTl.to('.progress', {
+                width: '100%',
+                duration: 2.5,
+                ease: "power2.inOut"
+            })
+            .to('.loader-text', {
+                opacity: 0,
+                y: -20,
+                duration: 0.5
+            }, '-=0.5')
+            .to('.loading-screen', {
+                opacity: 0,
+                duration: 1,
+                onComplete: function() {
+                    document.querySelector('.loading-screen').style.display = 'none';
+                    initAnimations();
+                }
+            });
+
+            function initAnimations() {
+                // Master timeline
+                const masterTl = gsap.timeline();
+
+                // Background reveal
+                masterTl.from('.bg-image', {
+                    scale: 1.2,
+                    duration: 2,
+                    ease: "power2.out"
+                });
+
+                // Navigation animation
+                masterTl.from('.nav', {
+                    y: -50,
+                    opacity: 0,
+                    duration: 1,
+                    ease: "power2.out"
+                }, '-=1.5');
+
+                // Pre-title animation
+                masterTl.to('.pre-title', {
+                    opacity: 1,
+                    duration: 1,
+                    ease: "power2.out"
+                }, '-=1');
+
+                // Main title animation
+                masterTl.to('.main-title', {
+                    opacity: 1,
+                    duration: 1.2,
+                    ease: "power3.out"
+                }, '-=0.8');
+
+                // Subtitle animation
+                masterTl.to('.subtitle', {
+                    opacity: 1,
+                    duration: 1,
+                    ease: "power2.out"
+                }, '-=0.6');
+
+                // Identity section animation
+                masterTl.to('.identity-section', {
+                    opacity: 1,
+                    duration: 1,
+                    ease: "power2.out"
+                }, '-=0.4');
+
+                // Login link animation
+                masterTl.to('.login-link', {
+                    opacity: 1,
+                    duration: 0.8,
+                    ease: "power2.out"
+                }, '-=0.2');
+
+                // Gender button hover effects
+                document.querySelectorAll('.gender-btn').forEach(btn => {
+                    btn.addEventListener('mouseenter', () => {
+                        gsap.to(btn, {
+                            scale: 1.05,
+                            duration: 0.3,
+                            ease: "power2.out"
+                        });
+                    });
+                    
+                    btn.addEventListener('mouseleave', () => {
+                        gsap.to(btn, {
+                            scale: 1,
+                            duration: 0.3,
+                            ease: "power2.out"
+                        });
+                    });
+                });
+
+                // Modal functionality
+                const modal = document.getElementById('contactModal');
+                const contactBtn = document.querySelector('.contact-btn');
+                const closeModal = document.querySelector('.close-modal');
+
+                // Open modal
+                contactBtn.addEventListener('click', function() {
+                    modal.style.display = 'flex';
+                    gsap.to('.modal-content', {
+                        scale: 1,
+                        opacity: 1,
+                        duration: 0.5,
+                        ease: "back.out(1.2)"
+                    });
+                });
+
+                // Close modal
+                closeModal.addEventListener('click', function() {
+                    gsap.to('.modal-content', {
+                        scale: 0.9,
+                        opacity: 0,
+                        duration: 0.3,
+                        ease: "power2.in",
+                        onComplete: function() {
+                            modal.style.display = 'none';
+                        }
+                    });
+                });
+
+                // Close modal when clicking outside
+                window.addEventListener('click', function(event) {
+                    if (event.target === modal) {
+                        gsap.to('.modal-content', {
+                            scale: 0.9,
+                            opacity: 0,
+                            duration: 0.3,
+                            ease: "power2.in",
+                            onComplete: function() {
+                                modal.style.display = 'none';
+                            }
+                        });
+                    }
+                });
+
+                // Form submission
+                document.getElementById('contactForm').addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form values
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const issue = document.getElementById('issue').value;
+                    
+                    // Add your form submission logic here
+                    console.log('Contact form submitted:', { name, email, issue });
+                    
+                    // Show success message
+                    alert('Thank you for your message! We will get back to you soon.');
+                    
+                    // Close modal
+                    gsap.to('.modal-content', {
+                        scale: 0.9,
+                        opacity: 0,
+                        duration: 0.3,
+                        ease: "power2.in",
+                        onComplete: function() {
+                            modal.style.display = 'none';
+                            document.getElementById('contactForm').reset();
+                        }
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>

@@ -147,6 +147,10 @@
 .form-footer a:hover {
     text-decoration: underline;
 }
+a {
+    text-decoration: none;
+    
+}
 
 .btn-submit {
     padding: 0.8rem 2rem;
